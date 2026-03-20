@@ -2,76 +2,60 @@
 
 Eine mobile-first Progressive Web App (PWA) zur Durchführung und Dokumentation von **DGUV V3 Prüfungen** elektrischer Betriebsmittel. Läuft vollständig im Browser – kein Server, keine Installation, keine Abhängigkeiten.
 
+🌐 **[→ App öffnen](https://johannesiwc.github.io/Pruefapp/)**
+
 ---
 
-## 📱 Features
+## 📱 Installation als App
 
-### Prüfworkflow
-- Geführter Schritt-für-Schritt Ablauf durch alle Prüfpunkte
-- Gerätenummer-Eingabe mit automatischer Erkennung bekannter Geräte
-- Erfassung von: Schutzklasse, Sichtprüfung, Nennspannung, R_SL, I_EA, ISO-Widerstand und Bemerkungen
-- Anzeige des Gerätenamens in jedem Schritt zur Kontrolle
+### Android (Chrome)
+1. App-Link oben in Chrome öffnen
+2. Banner **„Als App installieren"** antippen — oder: Drei-Punkte-Menü → *App installieren*
+3. Die App erscheint auf dem Homescreen und läuft im Vollbild ohne Browser-Leiste
+
+### iOS (Safari)
+1. App-Link in Safari öffnen
+2. Teilen-Symbol → *Zum Home-Bildschirm*
+
+---
+
+## ✨ Features
+
+### Firmenverwaltung
+- Firmen anlegen, auswählen und verwalten
+- Die aktive Firma wird automatisch in das Prüfprotokoll übernommen
+- Abgleich zwischen gewählter Firma und geladener Datenbank mit Warnung bei Abweichung
 
 ### Gerätedatenbank
 - Automatisches Speichern aller geprüften Geräte (Nummer, Name, Schutzklasse, Spannung)
-- Beim nächsten Prüfen derselben Gerätenummer werden Name und Parameter automatisch vorausgefüllt
-- Datenbank-Export als JSON-Backup und Import aus Backup-Datei
+- Beim nächsten Prüfen einer bekannten Gerätenummer werden Daten automatisch vorausgefüllt
+- Datenbankname wird automatisch gesetzt und mit der Firma abgeglichen
+- Datenbank anzeigen, bearbeiten, importieren, exportieren und löschen
+- Schutz vor versehentlichem Überschreiben durch Bestätigungsdialoge
+
+### Prüfworkflow
+- Geführter Schritt-für-Schritt Ablauf durch alle Prüfpunkte
+- Schritte: Gerätenummer → Gerätename → Schutzklasse → Sichtprüfung → Spannung → R_SL → I_EA → ISO-Widerstand → Bemerkungen
+- Gerätename wird in jedem Schritt angezeigt zur laufenden Kontrolle
+- Bekannte Geräte überspringen Eingabeschritte automatisch
 
 ### Protokoll
-- Bis zu 28 Geräte pro Protokoll (konfigurierbar über Einstellungen)
-- Listenansicht zum nachträglichen Bearbeiten aller Einträge
-- Export als **CSV**-Datei mit korrekter Formatierung für Excel (Semikolon-Trennung, BOM, Komma als Dezimaltrennzeichen)
-- Import bestehender CSV-Protokolle zur Weiterbearbeitung – der originale Dateiname bleibt beim erneuten Speichern erhalten
+- Konfigurierbare Anzahl Geräte pro Protokoll (Standard: 28, einstellbar 1–100)
+- Kollabierbare Listenansicht zum Bearbeiten aller Einträge
+- CSV-Export mit korrekter Formatierung für Excel
+- Import bestehender CSV-Protokolle zur Weiterbearbeitung
+- Originaler Dateiname bleibt beim erneuten Speichern erhalten
 
-### Datensicherheit
-- **Absturzsicherung**: Das aktuelle Protokoll wird nach jedem Gerät automatisch im `localStorage` gesichert
-- Bei erneutem Öffnen der App nach einem Absturz wird das unterbrochene Protokoll zur Wiederherstellung angeboten
-- Regelmäßige Datenbankbackups per Export-Button empfohlen
+### Datensicherheit & Komfort
+- **Absturzsicherung**: Protokoll wird nach jedem Gerät automatisch gesichert und bei erneutem Öffnen wiederhergestellt
+- Autovervollständigung für Firma, Ort, Prüfer und Gerätename
+- Bestätigungsdialoge vor dem Löschen oder Überschreiben von Daten
 
 ### Einstellungen
-- Maximale Gerätezahl pro Protokoll frei einstellbar (1–100, Standard: 28)
-- Wahl zwischen **Dunklem Theme** (Standard) und **Hellem Theme**
-- Einstellungen werden dauerhaft gespeichert
-
-### Autovervollständigung
-Folgende Felder merken sich zuvor eingegebene Werte und schlagen passende Einträge vor:
-- Firma / Kunde
-- Einsatzort
-- Name des Prüfers
-- Gerätename
-
-### PWA / Offline-Nutzung
-- Installierbar als App auf Android und iOS (kein App Store nötig)
-- Vollständig offline nutzbar nach einmaligem Laden
-- Läuft im Vollbild ohne Browser-Adressleiste
-
----
-
-## 🚀 Installation als App (Android / iOS)
-
-### Android (Chrome)
-1. Seite in Chrome öffnen
-2. Unten erscheint automatisch ein Banner **„Als App installieren"** → antippen
-3. Alternativ: Drei-Punkte-Menü → *„App installieren"* bzw. *„Zum Startbildschirm hinzufügen"*
-
-### iOS (Safari)
-1. Seite in Safari öffnen
-2. Teilen-Symbol antippen → *„Zum Home-Bildschirm"*
-
-### Lokale Nutzung ohne Server
-Die App kann auch direkt als HTML-Datei lokal betrieben werden:
-1. Datei auf das Gerät übertragen (USB, E-Mail, etc.)
-2. App **„Simple HTTP Server"** aus dem Play Store installieren
-3. Server auf die HTML-Datei zeigen → in Chrome öffnen → installieren
-
----
-
-## 📂 Dateinamen-Konvention
-
-| Dateityp | Format | Beispiel |
-|---|---|---|
-| Protokoll CSV | `Werte_Firma_Ort_DD-MM-JJJJ.csv` | `Werte_Mustermann_GmbH_Halle_1_20-03-2026.csv` |
-| DB-Backup | `DB_Backup_Firma_DD-MM-JJJJ_HH-MMUhr.json` | `DB_Backup_Mustermann_GmbH_20-03-2026_14-35Uhr.json` |
+- 🌙 Dunkles und ☀️ helles Theme
+- 🇩🇪 Deutsch und 🇬🇧 Englisch
+- Maximale Gerätezahl pro Protokoll
+- Datenbankname manuell vergeben
 
 ---
 
@@ -98,44 +82,55 @@ Die exportierte CSV enthält folgende Spalten (Semikolon-getrennt):
 
 ## 💾 Datenspeicherung
 
-Alle Daten werden ausschließlich lokal im `localStorage` des Browsers gespeichert:
+Alle Daten werden lokal im `localStorage` des Browsers gespeichert:
 
 | Schlüssel | Inhalt |
 |---|---|
-| `geraeteDB` | Gerätedatenbank (Nummer → Name, SK, Spannung) |
-| `protokoll_autosave` | Aktuelles Protokoll (Absturzsicherung) |
-| `maxDevices` | Eingestellte maximale Gerätezahl |
-| `theme` | Gewähltes Farbthema (`light` / `dark`) |
-| `ac_firma` | Autovervollständigung Firma |
-| `ac_ort` | Autovervollständigung Ort |
-| `ac_pruefer` | Autovervollständigung Prüfer |
-| `ac_gName` | Autovervollständigung Gerätename |
+| `geraeteDB` | Gerätedatenbank |
+| `dbLoadedName` | Anzeigename der geladenen Datenbank |
+| `dbFirmaName` | Firmenname der Datenbank (für Abgleich) |
+| `protokoll_autosave` | Absturzsicherung des laufenden Protokolls |
+| `firmaList` | Gespeicherte Firmen |
+| `activeFirma` | Aktuell ausgewählte Firma |
+| `maxDevices` | Maximale Gerätezahl pro Protokoll |
+| `theme` | Farbthema (`light` / `dark`) |
+| `lang` | Sprache (`de` / `en`) |
+| `ac_firma` / `ac_ort` / `ac_pruefer` / `ac_gName` | Autovervollständigung |
 
-> ⚠️ **Wichtig:** Bei einem Browser-Reset oder dem Löschen der Browser-Daten gehen alle gespeicherten Daten verloren. Regelmäßige Datenbankbackups über den Export-Button werden dringend empfohlen.
+> ⚠️ **Wichtig:** Bei einem Browser-Reset gehen alle gespeicherten Daten verloren. Regelmäßige Datenbankbackups über **Datenbank → Exportieren** werden dringend empfohlen.
+
+---
+
+## 🔄 Prüfablauf
+
+```
+Start → Firma wählen
+         └── Prüfung starten
+              └── Stammdaten (Firma, Ort, Prüfer)
+                   └── Gerätenummer
+                        ├── [Bekannt] ──────────────────────────→ Sichtprüfung
+                        └── [Unbekannt] → Gerätename → Schutzklasse → Sichtprüfung
+                                                              └── Spannung
+                                                                   ├── [SK I]    → R_SL → I_EA → ISO → Bemerkungen
+                                                                   └── [SK II/III]       → ISO → Bemerkungen
+                                                                                               └── Speichern → nächstes Gerät / CSV exportieren
+```
 
 ---
 
 ## 🛠 Technologie
 
 - Reines HTML5 / CSS3 / Vanilla JavaScript – keine Frameworks, keine Build-Tools
-- PWA mit Service Worker und Web App Manifest (inline als Blob eingebettet)
-- Schriften: [DM Sans](https://fonts.google.com/specimen/DM+Sans) & [DM Mono](https://fonts.google.com/specimen/DM+Mono) via Google Fonts
+- PWA mit inline Service Worker und Web App Manifest
+- Schriften: [DM Sans](https://fonts.google.com/specimen/DM+Sans) & [DM Mono](https://fonts.google.com/specimen/DM+Mono)
 - Datenspeicherung: `localStorage`
+- Hosting: GitHub Pages
 
 ---
 
-## 📋 Prüfablauf
+## 🐛 Bugs & Feedback
 
-```
-Start
- └── Stammdaten (Firma, Ort, Prüfer)
-      └── Gerätenummer
-           ├── [Bekanntes Gerät] → Sichtprüfung
-           └── [Unbekanntes Gerät] → Gerätename → Schutzklasse → Sichtprüfung
-                                                        └── Spannung
-                                                             ├── [SK I]  → R_SL → I_EA → ISO → Bemerkungen → Speichern
-                                                             └── [SK II/III] → ISO → Bemerkungen → Speichern
-```
+Fehler oder Verbesserungsvorschläge gerne als [Discussion](https://github.com/JohannesIWC/Pruefapp/discussions/categories/bugs) melden.
 
 ---
 
