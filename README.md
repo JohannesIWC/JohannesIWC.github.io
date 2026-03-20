@@ -2,7 +2,7 @@
 
 Eine mobile-first Progressive Web App (PWA) zur Durchführung und Dokumentation von **DGUV V3 Prüfungen** elektrischer Betriebsmittel. Läuft vollständig im Browser – kein Server, keine Installation, keine Abhängigkeiten.
 
-🌐 **[→ App öffnen](https://johannesiwc.github.io/Pruefapp/)**
+🌐 **[→ App öffnen](https://johannesiwc.github.io)**
 
 ---
 
@@ -130,7 +130,7 @@ Start → Firma wählen
 
 ## 🐛 Bugs & Feedback
 
-Fehler oder Verbesserungsvorschläge gerne als [Discussion](https://github.com/JohannesIWC/Pruefapp/discussions/categories/bugs) melden.
+Fehler oder Verbesserungsvorschläge gerne als [Discussion](https://github.com/JohannesIWC/JohannesIWC.github.io/discussions/categories/bugs) melden.
 
 ---
 
