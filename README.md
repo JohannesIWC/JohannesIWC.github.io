@@ -55,7 +55,6 @@ Eine mobile-first Progressive Web App (PWA) zur Durchführung und Dokumentation 
 - 🌙 Dunkles und ☀️ helles Theme
 - 🇩🇪 Deutsch und 🇬🇧 Englisch
 - Maximale Gerätezahl pro Protokoll
-- Datenbankname manuell vergeben
 
 ---
 
